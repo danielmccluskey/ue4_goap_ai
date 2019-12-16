@@ -36,12 +36,12 @@ bool Action_Mutate::IsActionFinished()
 	return m_bPerformingAction;
 }
 
-bool Action_Mutate::CheckPreCondition(AActor * a_paAIAgent)
+bool Action_Mutate::FindTarget(AActor* a_paAIAgent)
 {
 	return true;//This Action does not have any other requirements other than the State preconditions, so we can just return true.
 }
 
-bool Action_Mutate::PerformAction(AActor * a_paAIAgent)
+bool Action_Mutate::PerformAction(AActor* a_paAIAgent)
 {
 	CreateDynamicMaterial(a_paAIAgent);//Create the material, should really pass this through on creation.
 	m_pDynamicMaterial->SetVectorParameterValue("BodyColor", FLinearColor(1.0f, 0.0f, 0.0f));//Set the material colour

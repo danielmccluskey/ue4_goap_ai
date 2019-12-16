@@ -29,7 +29,7 @@ bool GOAP_Action::IsActionFinished()
 	return false;
 }
 
-bool GOAP_Action::CheckPreCondition(AActor* a_paAIAgent)
+bool GOAP_Action::FindTarget(AActor* a_paAIAgent)
 {
 	return false;
 }

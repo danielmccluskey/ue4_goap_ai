@@ -34,7 +34,7 @@ bool Action_BiteActor::IsActionFinished()
 	return m_bPerformingAction;
 }
 
-bool Action_BiteActor::CheckPreCondition(AActor * a_paAIAgent)
+bool Action_BiteActor::FindTarget(AActor* a_paAIAgent)
 {
 	TArray<AActor*> aFoundAgents;//To store list of all agents
 	UGameplayStatics::GetAllActorsOfClass(a_paAIAgent->GetWorld(), AGOAP_Agent::StaticClass(), aFoundAgents);//Get All agents
@@ -70,7 +70,7 @@ bool Action_BiteActor::CheckPreCondition(AActor * a_paAIAgent)
 	return true;//We have found a target so we can perform the action.
 }
 
-bool Action_BiteActor::PerformAction(AActor * a_paAIAgent)
+bool Action_BiteActor::PerformAction(AActor* a_paAIAgent)
 {
 	AGOAP_Agent* pTargetAgent = Cast<AGOAP_Agent>(m_paTarget);
 	if (pTargetAgent)//Null check

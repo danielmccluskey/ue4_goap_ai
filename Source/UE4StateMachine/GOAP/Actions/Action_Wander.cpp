@@ -36,7 +36,7 @@ bool Action_Wander::IsActionFinished()
 	return m_bPerformingAction;
 }
 
-bool Action_Wander::CheckPreCondition(AActor * a_paAIAgent)
+bool Action_Wander::FindTarget(AActor* a_paAIAgent)
 {
 	AGOAP_Agent* pAIAgent = Cast<AGOAP_Agent>(a_paAIAgent);
 	if (pAIAgent)
@@ -57,7 +57,7 @@ bool Action_Wander::CheckPreCondition(AActor * a_paAIAgent)
 	return false;
 }
 
-bool Action_Wander::PerformAction(AActor * a_paAIAgent)
+bool Action_Wander::PerformAction(AActor* a_paAIAgent)
 {
 	m_bPerformingAction = true;
 	return true;

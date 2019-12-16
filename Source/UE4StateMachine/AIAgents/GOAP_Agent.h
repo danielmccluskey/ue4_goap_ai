@@ -88,14 +88,29 @@ public:
 	bool GetMutatedStatus();
 	void SetMutatedStatus(bool a_bTrue);
 
+	/// <summary>
+	/// The health of the agent
+	/// </summary>
 	int m_iHealth;
+	/// <summary>
+	/// How close the agent needs to be to its target in order to perform the action
+	/// </summary>
 	float m_fArrivalDistance = 100.0f;
 
 private:
 	UPROPERTY(EditAnywhere)
-		bool m_bInfected = false;//Tells us whether the agent is infected or not
+		/// <summary>
+		/// Tells us whether the agent is infected or not
+		/// </summary>
+		bool m_bInfected = false;
 
+	/// <summary>
+	/// Has the agent bitten someone?
+	/// </summary>
 	bool m_bHasBittenSomeone = false;
+	/// <summary>
+	/// Has the agent mutated?
+	/// </summary>
 	bool m_bHasMutated = false;
 
 	TSet<GOAP_Action*> m_sAvailableActions;

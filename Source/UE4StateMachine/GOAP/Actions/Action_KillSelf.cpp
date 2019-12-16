@@ -35,12 +35,12 @@ bool Action_KillSelf::IsActionFinished()
 	return m_bPerformingAction;
 }
 
-bool Action_KillSelf::CheckPreCondition(AActor * a_paAIAgent)
+bool Action_KillSelf::FindTarget(AActor* a_paAIAgent)
 {
 	return true;//This Action does not have any other requirements other than the State preconditions, so we can just return true.
 }
 
-bool Action_KillSelf::PerformAction(AActor * a_paAIAgent)
+bool Action_KillSelf::PerformAction(AActor* a_paAIAgent)
 {
 	a_paAIAgent->Destroy();//Destroy me
 	m_bPerformingAction = true;

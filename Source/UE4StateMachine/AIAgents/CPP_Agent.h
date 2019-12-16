@@ -36,7 +36,16 @@ public:
 	void SetBehaviour(Behaviour* a_pBehaviour) { m_pCurrentBehaviour = a_pBehaviour; }
 
 private:
+	/// <summary>
+	/// The current behaviour being performed
+	/// </summary>
 	Behaviour* m_pCurrentBehaviour;
+	/// <summary>
+	/// TO-DO store the idle state so that we have a constant plan reference
+	/// </summary>
 	Behaviour* m_pIdleState;
+	/// <summary>
+	/// Should we interrupt the current behaviour?
+	/// </summary>
 	bool m_bInterruptBehaviour = false;
 };

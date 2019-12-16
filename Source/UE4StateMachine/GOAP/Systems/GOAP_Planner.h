@@ -9,10 +9,19 @@ class Node;
 class AActor;
 class GOAP_Action;
 
+/// <summary>
+/// The class that actually builds the plan of actions for an agent
+/// </summary>
 class GOAP_Planner
 {
 public:
+	/// <summary>
+	/// Initializes a new instance of the <see cref="GOAP_Planner"/> class.
+	/// </summary>
 	GOAP_Planner();
+	/// <summary>
+	/// Finalizes an instance of the <see cref="GOAP_Planner"/> class.
+	/// </summary>
 	~GOAP_Planner();
 	TQueue<GOAP_Action*>* m_qActionQueue;
 	TQueue<GOAP_Action*> m_qQueue;

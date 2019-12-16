@@ -16,7 +16,7 @@ GOAP_Planner::~GOAP_Planner()
 {
 }
 
-void GOAP_Planner::CreateActionPlan(AActor * a_pAIAgent, TSet<GOAP_Action*> a_sAvailableActions, TSet<TPair<FString, bool>>& a_smWorldState, TSet<TPair<FString, bool>>& a_smGoalState, TQueue<GOAP_Action*>* a_qActionPlan)
+void GOAP_Planner::CreateActionPlan(AActor* a_pAIAgent, TSet<GOAP_Action*> a_sAvailableActions, TSet<TPair<FString, bool>>& a_smWorldState, TSet<TPair<FString, bool>>& a_smGoalState, TQueue<GOAP_Action*>* a_qActionPlan)
 {
 	//Reset all of the Action specific variables
 	for (GOAP_Action* pAction : a_sAvailableActions)
@@ -28,7 +28,7 @@ void GOAP_Planner::CreateActionPlan(AActor * a_pAIAgent, TSet<GOAP_Action*> a_sA
 	TSet<GOAP_Action*> sUsableActions;
 	for (GOAP_Action* pAction : a_sAvailableActions)
 	{
-		if (pAction->CheckPreCondition(a_pAIAgent))//If the agent can actually run that action.
+		if (pAction->FindTarget(a_pAIAgent))//If the agent can actually run that action.
 		{
 			sUsableActions.Add(pAction);
 		}
